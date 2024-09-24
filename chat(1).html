@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    *{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+body {
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.container {
+  border: 2px solid #dedede;
+  background-color: #DDF0C2;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.darker {
+  border-color: #ccc;
+  background-color: #8C999A;
+  text-align: right;
+  position:relative;
+}
+
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.container img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.container img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+.time-right {
+  float: right;
+  color: #000000;
+}
+
+.time-left {
+  float: left;
+  color: #000000;
+}
+
+.profile{
+  float: left;
+  max-width: 100px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.top{
+	
+    padding: 20px;
+    background-color:#0EB29A;
+    color: white;
+}
+
+
+.animated {
+  animation-name: example;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; 
+}
+
+.removebutton {
+  animation-name: moveRight;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; 
+  opacity: 0;
+  visibility: hidden;
+}
+
+.bottom{
+position: relative;
+  bottom: 0;
+  width: 99%;
+}
+.Message{
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    outline: none;
+    position: relative;
+    text-align: left;
+
+}
+.Send{
+    background-color: white;
+    height: 30px;
+    border-radius: 10%;
+
+}
+
+@keyframes example {
+  0%   { left: 0px; top: 0px;}
+  100%  {left: 0px; top: -250px;}
+}
+
+@keyframes moveRight {
+  0% { left: 0px; }
+  100% { left: 1000px; }
+}
+
+</style>
+
+<script>
+    function startAnimation() {
+        var button = document.getElementById("button");
+        var div = document.getElementById("message");
+  button.classList.add("removebutton");
+  div.classList.add("animated");
+    }
+    </script>
+
+</head>
+<body style="background-color:#F5FDFF">
+
+    <div class="top">
+    <img src="https://pyxis.nymag.com/v1/imgs/83e/027/eae785367e589387b9db0d94a06d8f1b66-23-yohji-yamamoto-hello-kitty.rsquare.w400.jpg" 
+    alt="Avatar" class="profile" style="width:15%;">
+    <h2>Hello Kitty</h2>
+    <p> last seen online at 11:02</p>
+    </div>
+    <hr>
+
+    <div class="container">
+    <img src="https://pyxis.nymag.com/v1/imgs/83e/027/eae785367e589387b9db0d94a06d8f1b66-23-yohji-yamamoto-hello-kitty.rsquare.w400.jpg" alt="Avatar" style="width:100%;">
+    <p>Hi!</p>
+    <span class="time-left">11:00</span>
+    </div>
+
+    <div class="container darker">
+    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1ffb340c-45b5-4137-8b12-98f2fe9645c6/deeetdd-6e183882-6cf8-4e78-9b7a-53d85c96894b.png/v1/fill/w_300,h_300,q_80,strp/cathy__hello_kitty_and_friends__square_by_autism79_deeetdd-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MzAwIiwicGF0aCI6IlwvZlwvMWZmYjM0MGMtNDViNS00MTM3LThiMTItOThmMmZlOTY0NWM2XC9kZWVldGRkLTZlMTgzODgyLTZjZjgtNGU3OC05YjdhLTUzZDg1Yzk2ODk0Yi5wbmciLCJ3aWR0aCI6Ijw9MzAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.o5iELWzXD3WNt8GDW1uUTIEYuy5238Qs-tkcgKUX3ls" alt="Avatar" class="right" style="width:100%;">
+    <p>Hello!</p>
+    <span class="time-right">11:01</span>
+    </div>
+
+    <div class="container">
+    <img src="https://pyxis.nymag.com/v1/imgs/83e/027/eae785367e589387b9db0d94a06d8f1b66-23-yohji-yamamoto-hello-kitty.rsquare.w400.jpg" alt="Avatar" style="width:100%;">
+    <p>How are you?</p>
+    <span class="time-left">11:02</span>
+    </div>
+
+    <div class="container darker bottom" style="margin-top:270px;" id="message">
+    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1ffb340c-45b5-4137-8b12-98f2fe9645c6/deeetdd-6e183882-6cf8-4e78-9b7a-53d85c96894b.png/v1/fill/w_300,h_300,q_80,strp/cathy__hello_kitty_and_friends__square_by_autism79_deeetdd-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MzAwIiwicGF0aCI6IlwvZlwvMWZmYjM0MGMtNDViNS00MTM3LThiMTItOThmMmZlOTY0NWM2XC9kZWVldGRkLTZlMTgzODgyLTZjZjgtNGU3OC05YjdhLTUzZDg1Yzk2ODk0Yi5wbmciLCJ3aWR0aCI6Ijw9MzAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.o5iELWzXD3WNt8GDW1uUTIEYuy5238Qs-tkcgKUX3ls" alt="Avatar" class="right" style="width:100%;">
+    <input type="text" class="Message" placeholder="Enter your message here"/><br><br>
+    <input type="button" value="Send Message" class="Send" id="button" onclick="startAnimation()"/>
+    <span class="time-right">11:07</span>
+    </div>
+
+</body>
+</html>
